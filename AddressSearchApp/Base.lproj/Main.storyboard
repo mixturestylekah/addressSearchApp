@@ -1,25 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AddressSearchApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="郵便番号を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vq-eK-mJt">
+                                <rect key="frame" x="16" y="60" width="343" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <action selector="tapReturn" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="edr-ta-EQc"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqW-1s-TVQ">
+                                <rect key="frame" x="157" y="130" width="60" height="30"/>
+                                <state key="normal" title="住所検索"/>
+                                <connections>
+                                    <action selector="tapSearch" destination="BYZ-38-t0r" eventType="touchUpInside" id="lCe-Fo-Phu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwE-os-LsP">
+                                <rect key="frame" x="0.0" y="251" width="375" height="24"/>
+                                <color key="backgroundColor" red="1" green="0.96465517241379306" blue="0.53380926724137934" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="hH5-fc-InS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="都道府県" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7H-bL-ew6">
+                                <rect key="frame" x="0.0" y="210" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="住所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HX8-HO-lIJ">
+                                <rect key="frame" x="0.0" y="295" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fo3-W7-fuA">
+                                <rect key="frame" x="0.0" y="336" width="375" height="24"/>
+                                <color key="backgroundColor" red="1" green="0.96465517241379306" blue="0.53380926724137934" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="tHa-pu-GJE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fo3-W7-fuA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Zj-Md-DLM"/>
+                            <constraint firstItem="HX8-HO-lIJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CJB-9d-2hp"/>
+                            <constraint firstAttribute="trailing" secondItem="fo3-W7-fuA" secondAttribute="trailing" id="Cd7-Ed-3ar"/>
+                            <constraint firstItem="RwE-os-LsP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Iur-2O-p2k"/>
+                            <constraint firstItem="jqW-1s-TVQ" firstAttribute="top" secondItem="0vq-eK-mJt" secondAttribute="bottom" constant="40" id="RGz-e3-MGg"/>
+                            <constraint firstItem="RwE-os-LsP" firstAttribute="top" secondItem="c7H-bL-ew6" secondAttribute="bottom" constant="20" id="XAT-w8-2ft"/>
+                            <constraint firstAttribute="trailing" secondItem="RwE-os-LsP" secondAttribute="trailing" id="Y61-sL-Pw0"/>
+                            <constraint firstItem="c7H-bL-ew6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZfC-In-q9h"/>
+                            <constraint firstItem="c7H-bL-ew6" firstAttribute="top" secondItem="0vq-eK-mJt" secondAttribute="bottom" constant="120" id="cWw-Ts-kO1"/>
+                            <constraint firstItem="jqW-1s-TVQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fMN-Gr-uRh"/>
+                            <constraint firstItem="0vq-eK-mJt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gLY-t3-zw9"/>
+                            <constraint firstItem="fo3-W7-fuA" firstAttribute="top" secondItem="HX8-HO-lIJ" secondAttribute="bottom" constant="20" id="iNK-xc-QSt"/>
+                            <constraint firstItem="HX8-HO-lIJ" firstAttribute="top" secondItem="RwE-os-LsP" secondAttribute="bottom" constant="20" id="rMP-OL-DA8"/>
+                            <constraint firstItem="0vq-eK-mJt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="tfe-LW-jyz"/>
+                            <constraint firstItem="0vq-eK-mJt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yNX-gO-c3H"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="fo3-W7-fuA" id="flf-lF-W8M"/>
+                        <outlet property="prefLabel" destination="RwE-os-LsP" id="PaX-Zk-mGG"/>
+                        <outlet property="zipTextField" destination="0vq-eK-mJt" id="q2V-al-qc2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="244.5" y="307.5"/>
         </scene>
     </scenes>
 </document>
